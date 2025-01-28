@@ -28,7 +28,7 @@ function findLastindex(str,target){      // when two or more similar words are p
 findLastindex("hello world world","world");
 
 //slice
-function getslice(str,start,end){
+function getslice(str,start,end){        /// end is exclusive ***
     console.log("the original string is :"+str);
     console.log("after slice :"+str.slice(start,end));
 
