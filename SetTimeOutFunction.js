@@ -7,5 +7,5 @@ function greetAlient(){
 
 setTimeout(greet,1*1000)   
 // this function show the hello world ,just after 5 sec after running code
-setInterval(greetAlient,1*1000)
+setInterval(greetAlient,1*2000)
 //this function show the hello Alien ,just every 1 sec 

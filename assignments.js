@@ -68,3 +68,10 @@ function currentworld(fn){
     fn();
 }
 currentworld(hello1)
+
+//////////////////////
+function data(dataID){
+    console.log("data",dataID)
+    setTimeout(()=>console.log("hi everyone"),2000)  //set time out always take the function and time
+}
+data(123);

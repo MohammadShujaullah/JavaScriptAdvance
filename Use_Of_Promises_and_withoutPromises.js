@@ -2,6 +2,8 @@
 
 // promise is Asynchronous fn. which is slightly more readble and MAKE CallBacks
 
+const { rejects } = require("assert");
+const { promises } = require("dns");
 const fs = require("fs")
 
 function shujaWrite(loaded) {
@@ -39,11 +41,27 @@ shujaWriting().then(uploading);
 
 // another example is use of promise-------------------------------
 
-const d= new Promise(function(resolve){
-        resolve("hi everyone")
+const d = new Promise(function (rejects) {        ///** vvi --> promises has 3 inbuiltfn. resolve,rejects,pending  // */
+    rejects("some error occurred")
 })
 
 
-d.then(function (data){
+d.then(function (data) {
     console.log(data);
 });
+
+////////////////////////////////////
+function getdata(value, getnextdata) {
+    return new Promise((resolve,rejects)=>{
+        setTimeout(() => {
+            console.log("data", value)
+            resolve("succes");
+            if ((getnextdata())) {
+                getnextdata();
+            }
+        }, 2000)
+    })
+    
+
+}
+getdata(99999);

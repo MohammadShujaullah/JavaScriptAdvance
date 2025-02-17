@@ -22,3 +22,11 @@ setTimeout(sumOfAll,1000);      //(however,hello world is after the settimeout f
                                 // //settime function doing their own work)
                                //<--THIS IS KNOWN AS DELIGATION IN javascript
 console.log("hello wolrd")
+
+/////////////////////////////////////
+
+
+
+ 
+ 
+

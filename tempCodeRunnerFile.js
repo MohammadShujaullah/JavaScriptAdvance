@@ -1,14 +1,11 @@
-function shujaWriting() {
-//     let p = new Promise(function (resolve) {
-//         resolve("hi everyone")
-//     })
-//     return p;
-// }
+getdata(22222).then((res)=>{
+//     console.log(res)
+//     getdata(3333).then((res)=>{
+//         console.log(res)
+//         getdata(4444).then((res)=>{
+//             console.log(res)
 
-// function Main() {
-//     shujaWriting().then(function (answer) {
-//         console.log(answer)
-//         console.log("hi everyone111")
+//         })
+
 //     })
-// }
-// Main()
+// })
