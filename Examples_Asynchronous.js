@@ -3,18 +3,42 @@
  fs.readFile("a.text","utf-8",function(err,data){    // async. function,it read the file from another.
     console.log(data);
     console.log(err);   // it gives null , beacuse  here err is nothing 
+
+   
+
+     //////how to write in a file
+    const content=" hello  i   am   adding     the  content   in   a.text"
+    fs.writeFile("a.text",content,"utf-8",(err)=>{
+      if(err){
+         console.error("the errr voccured",err)
+         return;
+      }
+      console.log("successfully write the operation")
+    })
+
+
+
+     //// how to remove extra space , and write it back to the file////
+    const cleandata=data.replace(/\s+/g,'').trim();
+    fs.writeFile("a.text",cleandata,"utf-8",(err)=>{
+      if(err){
+         console.error("error occured is--",err)
+         return
+      }
+      console.log("completed the task of editing the writted a.text ")
+
+    })
+
  })
 
- //////how to write in a file/////
 
- const content=" hello  i am adding the content in a.text"
- fs.writeFile("a.text",content,"utf-8",(err)=>{
-   if(err){
-      console.error("the errr voccured",err)
-   }
-   console.log("successfully write the operation")
- })
+
+
  //////////////////////////////////////////////
+
+
+
+
 
 
  console.log("hello world")
