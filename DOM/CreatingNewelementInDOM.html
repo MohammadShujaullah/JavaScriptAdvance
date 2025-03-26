@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with chai and code </title>
+</head>
+
+<body style="background-color:#212121; color:white">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+
+</body>
+
+
+<script>
+    console.log(document.querySelector('.parent'))
+    const query = document.querySelector('.parent')
+
+    console.log(query.children[1])
+
+    //query is a html collection ,but we can write its content through the for loop,however it is not n array
+    for (let i = 0; i < query.children.length; i++) {
+        console.log(query.children[i].innerHTML)
+    }
+
+    query.children[1].style.color = 'red'
+
+    //imp attributes
+    // we can go from parent to child 
+
+    console.log(query.firstElementChild)
+
+    console.log(query.lastElementChild)
+
+    // we can go from child to parent
+
+    console.log(query.querySelector('.day'))  // it will select the first element always
+
+    const mummy= query.querySelector('.day')
+    console.log(mummy.parentElement)
+    // 2nd one is 
+    console.log(mummy.nextElementSibling)
+
+    // important
+    console.log("node", query.childNodes)  
+// this shows the nodes of the query, means how complex the div, which is given
+
+
+
+
+
+
+
+</script>
+
+</html>

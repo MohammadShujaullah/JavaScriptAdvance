@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM chai or code</title>
+</head>
+
+<body style="background-color: black;color:white">
+    <ul class="language">
+
+        <li>javascript</li>
+    </ul>
+</body>
+
+<script>
+    function addLanguage(langname) {
+        const li = document.createElement('li')
+        li.innerText = langname                   // these code is not much optimised, because they traverse whole tree ,and then add list or text
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('python')
+    addLanguage('typscript')
+
+
+
+
+    function optimalAddLanguage(langname){
+        const li=document.createElement('li')
+       li.appendChild( document.createTextNode(langname) ) // kya append krna ha 
+
+       document.querySelector('.language').appendChild(li)  // khaa append krna ha 
+    }
+    optimalAddLanguage('javaa')
+
+
+
+
+    // now i have to do  ..EDIT
+     const secondlang=document.querySelector('li:nth-child(2)')  // phle select kra , ke kisko edit krna ha
+     const temp=document.createElement('li')  // uske baad uska replica create kra 
+     temp.appendChild(document.createTextNode('c+++++'))   // uske replica main , jo add krna ha ,wo kra dia 
+     secondlang.replaceWith(temp)  // then directly replace kr dia 
+
+
+     // 2nd e.g for EDIT
+     const firstlang=document.querySelector('li:first-child')
+     const f1=document.createElement('li')
+     f1.innerText='rust'
+     firstlang.replaceWith(f1)
+
+
+
+     // now how to ..REMOVE
+
+     const lang=document.querySelector('li:first-child')
+     lang.remove()
+
+
+
+
+
+</script>
+
+</html>

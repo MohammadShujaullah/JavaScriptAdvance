@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    DOM learning
+  </title>
+  <style>
+    .paap {
+      background-color: black;
+      color: white;
+
+    }
+  </style>
+</head>
+                                        <!--these are the normal code -->
+<body class="paap">
+  <div class="bg-black">
+    <h1 class="papa" id="heading"> DOM learning on chai or code <spane style="display: none;">test  the text</spane></h1>
+
+    <h2>hay papa , shuja ullah is tesing me a</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <ul>
+    <li class="list-item">tom</li>
+    <li class="list-item">jarry</li>
+    <li class="list-item">shuja</li>
+    <li class="list-item">pappu</li>
+  </ul>
+
+</body>
+
+</html>
+
+<!--     DOCUMENT OBJECT MODEL
+DOM  in console
+1.console.log(document)
+2.console.log(document.link)
+3.console.log(document.getElementById(' name of the id '))   this is for the access of the code ,for which this id is used 
+4.console.log(document.getElementById('heading').innerHTML="<h1>Shujaullah</h1>")  // this is DOM
+5.document.getElementById('heading').id
+6.document.getElementById('heading').className
+7.document.getElementById('heading').getAttribute('id')
+8.document.getElementById('heading').getAttribute('class')
+9.document.getElementById('heading').setAttribute('heading','seading')  //DOM , for set attribute overwrite the  id
+
+// we can also edit the color, padding, margin, borderradius etc
+
+10. title=document.getElementById('heading')
+11.title.style.backgroundColor='green'
+
+
+12.title.style.padding='15px'
+13.title.style.margin='15px'
+14.title.style.borderRadius='25px'
+
+
+15.title.innerHTML 
+//   returns  'DOM learning on chai or code <spane  style="display: none;">test  the text</spane>'
+// it gives whole html code inside this
+
+{16.title.textContent
+// returns ' DOM learning on chai or code test  the text'
+// it return all text which is hidden or not(like above html code)
+
+17. title.innerText 
+returns 'DOM learning on chai or code'
+//  it return only those text which is visible on the web page
+
+
+}
+18.document.querySelector('h2')
+ // it return  always the first thing(attribute), like first ('h2') present in the code 
+
+ //
+ 19.document.querySelector('#heading')
+// use to get the h1, using id, we use '#'
+<h1 class=​"papa" id=​"heading">​…​</h1>​
+
+20. document.querySelector('.paap')
+// return the whole body, for which this class is used , we use '.', if  access with class
+
+21.const typeh2=document.querySelectorAll('h2')
+// it select whole h2 , means wherever h2 is present, it will selected
+// but in Node list form , so you can access like this.->
+//         typeh2[0].style.backgroundColor="green"
+
+23. you should know the conversion of (HTML Collection) to array and also NodeList to array etc.
+// i.   const list=document.getElementsByClassName('list-item')
+// ii.  onst mm=Array.from(list)
+// iii.  mm.forEach(function(li){
+         li.style.color='orange'  
+         li.innerText='shuja';                                 // Shift+Enter
+         
+         
+         
+         
+         
+         })
+//
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+

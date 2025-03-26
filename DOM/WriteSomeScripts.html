@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>DOM with chai or code</title>
+</head>
+
+<body style="background-color:#212121; color:white">
+
+
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.id = Math.round(Math.random() * 10 + 1)  // randomlly kuch bhi add krdo
+    div.className = 'mummy'
+    div.style.backgroundColor = 'green'
+    div.style.padding = '15px'
+    div.setAttribute("title", 'shuja')
+
+    div.innerText = "chai or code"  // this method over ride the privious one ,and time consuming, so we use 
+    document.body.appendChild(div)
+    // or 
+
+    // now we will see how to add test in the main web page
+    const pp = document.createTextNode('chai or codee');
+    div.appendChild(pp)
+    document.body.appendChild(div)
+
+
+
+</script>
+
+</html>
