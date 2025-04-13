@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer per second </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body style="background-color: #212121; color:white">
+    <header style="background-color: white;color:back">
+        <nav>
+            <a href="/" aria-current="page">Home</a>
+            <a href="https//:github.com">my github channel</a>
+        </nav>
+    </header>
+
+    <h1>Start should change the background color in every second</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+</body>
+<script>
+    //1. firstly, we have to create a random color generator 
+
+   function randomColor() {
+        const hex = '0123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]    //Math.floor(Math.random()*16 this gives 
+            // random number from 0 to 15 ,through which we can 
+            // add number to color and made a hexa code.
+
+        }
+        return color
+    }
+    
+
+    //2. now doing color chaning when clicking on start button ,
+    //  and stop this by stop  button 
+
+    let ending; // to stop
+
+    function startChangingcolor(){
+       ending= setInterval(changing,1000)
+        function changing(){
+            document.querySelector("body").style.backgroundColor=randomColor();
+        }
+    }
+    
+   
+   document.querySelector("#start").addEventListener("click",startChangingcolor)
+   document.querySelector("#stop").addEventListener("click",function(){
+    clearInterval(ending)
+   })
+
+
+
+</script>
+
+</html>
