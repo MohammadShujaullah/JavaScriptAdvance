@@ -43,19 +43,23 @@
     let ending; // to stop
 
     function startChangingcolor(){
-       ending= setInterval(changing,1000)
+      if(!ending){
+        ending= setInterval(changing,1000)
+      }
+
         function changing(){
             document.querySelector("body").style.backgroundColor=randomColor();
         }
     }
     
-   
    document.querySelector("#start").addEventListener("click",startChangingcolor)
+
+
+   //3. to stop the color changing
    document.querySelector("#stop").addEventListener("click",function(){
     clearInterval(ending)
+    ending=null; // reset to allow restart
    })
-
-
 
 </script>
 
