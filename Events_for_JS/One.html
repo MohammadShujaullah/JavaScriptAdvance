@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: rgba(35, 3, 3, 0.871);color:beige">
+    <h1>Amazing Images</h1>
+    <div>
+        <ul id="Images">
+            <li><img width="200px" id="potoshop"  src="https://c4.wallpaperflare.com/wallpaper/385/812/1003/5bd38ed1e1c0c-wallpaper-preview.jpg"></li>
+            <li><img width="200px" id="japan"  src="https://c4.wallpaperflare.com/wallpaper/670/961/282/dubai-skyline-starry-sky-at-night-ultra-hd-wallpapers-for-android-mobile-phones-tablet-and-laptop-1920%C3%971080-wallpaper-preview.jpg"></li>
+            <li><img width="200px" id="river"  src="https://c4.wallpaperflare.com/wallpaper/157/62/574/hummingbirds-and-pink-flowers-4k-ultra-hd-wallpaper-for-desktop-laptop-tablet-mobile-phones-and-tv-3840%D1%852400-wallpaper-preview.jpg"></li>
+            <li><img width="200px" id="owl"   src="https://c4.wallpaperflare.com/wallpaper/219/894/458/5bd329b2b5293-wallpaper-preview.jpg"></li>
+            <li><img width="200px" id="prayer" src="https://c4.wallpaperflare.com/wallpaper/267/451/736/5bd32e1029d00-wallpaper-preview.jpg"></li>
+            <li><a target="_blank" style="color:beige" id="google" href="https://google.com">Google</a></li>
+
+
+
+
+        </ul>
+
+
+
+
+    </div>
+
+</body>
+<script>
+       // some important Events are -->
+   // type , timestamp,preventDfault
+   //target,toElement,srcElement,currentTarget
+  // clientX,clientY,screenX,screenY
+  //altKey,ctrlKey,shiftKey,keyCode
+
+
+
+    // document.getElementById('owl').onclick=function(){
+    //     alert('owl haa')                                    you can do this also, but not fessible
+    // }
+
+    // now the lattest is 
+
+    document.getElementById('Images').addEventListener('click',function(e){
+        alert('clicked inside the ul')
+    })
+    document.getElementById('owl').addEventListener('click', function(e){
+        alert('owl clicked again')
+    },)
+
+
+
+    //// what is bubbling and capturing 
+
+    //by default bubbling hota ha ,  lekin if want capturing add true;
+    document.getElementById('Images').addEventListener('click',function(e){
+       console.log('clicked inside the ul')
+    },false)
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('owl clicked again')    
+    },false)
+
+    // captureing
+    // just replace false with true
+
+
+
+
+    document.getElementById('japan').addEventListener('click', function(e){
+        console.log('japan clicked') 
+        e.stopPropagation();   // used so that , we will not go ,further bubbling, sirf japan tk hi rahu
+
+    },)
+
+
+    // now see on google link
+    document.getElementById('google').addEventListener('click',function(e){
+        console.log('google clicked')
+        e.preventDefault();  // used (taaki further linkmkaam na kre)
+        e.stopPropagation();   // used so that , we will not go ,further bubbling, sirf japan tk hi rahu
+
+
+
+    })
+    document.getElementById('Images').addEventListener('click',function(e){
+        let removeAll=(e.target.parentNode);
+        removeAll.remove();     // method 1
+// method2 
+// removeAll.parentNode.removeChild(removeAll);
+
+
+
+//but the problem is, agr hm image ke ilawah bhi click kr rhe han , like <li> etc pr , tb bhisab kuch gayeb ho ja rha h
+    // document.getElementById('Images').addEventListener('click',function(e){
+    //    console.log(e.target.id);
+    //    if(e.target.tagName==='IMG'){
+    //     let removeAll=(e.target.parentNode);
+    //     removeAll.remove(); 
+
+    //    }
+
+
+    })
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+</script>
+
+</html>
