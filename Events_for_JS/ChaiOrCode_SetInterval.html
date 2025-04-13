@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai or javascript</title>
+</head>
+<body>
+    <h1>Chai or Javascript</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+</body>
+<script>
+
+// we have to do a task , jab hm start button dbaei to , print hona start ho jae or jab
+//  end dbaei to ruk jae 
+
+
+ const fn=function(str){
+    console.log(str,Date.now())
+ }
+
+ let clearall;
+ document.querySelector("#start").addEventListener("click",function(){
+/* in setinterval we can pass a 3rd parameter , string also*/
+  clearall=setInterval(fn,1000,"hii")
+ })
+ 
+
+ document.querySelector("#stop").addEventListener("click",function(){
+      clearInterval(clearall)
+ })
+
+
+</script>
+</html>
