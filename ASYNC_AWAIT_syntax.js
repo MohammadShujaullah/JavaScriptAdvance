@@ -2,7 +2,13 @@
 
 function shujaWriting() {
     let p = new Promise(function (resolve) {
-        resolve("hi everyone")
+        //promise ke ander we can do , all asynchronous tasks
+        resolve("hi everyone") 
+        
+        //v.v.i(resolve ka kamm ye ha ki, wo promise
+        //  ko .then se connect krta ha, agr resollve nahi lgaaenge to , niiche wala function
+        //  main() nahi chlegaa )
+        
     })
     return p;
 }
