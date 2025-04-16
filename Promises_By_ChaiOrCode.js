@@ -64,7 +64,7 @@ async function getAllUsers(){
 getAllUsers()
 
 
-////////////////////// 2nd method of above///////////
+////////////////////// 2nd method by . then of fetch///////////
 
 // fetch('https://jsonplaceholder.typicode.com/users')
 // .then((response)=>{
