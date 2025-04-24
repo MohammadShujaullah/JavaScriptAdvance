@@ -1,7 +1,7 @@
 class Animal{
    constructor(name,legs,speaks){
     this.name=name;
-    this.leg=legs;
+    this.legs=legs;
     this.speaks=speaks;
    }
 
@@ -20,3 +20,6 @@ console.log(dog.name)
 dog.speaked(); //call function on object 
 
 Animal.mytype();
+
+
+ 
