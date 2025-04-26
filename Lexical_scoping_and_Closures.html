@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexicalScoping_And_Closure</title>
+</head>
+<body style="background-color: black;color:white">
+    <button id="Orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+
+// // **1.lexical scoping is a topic in which we can 
+// // if we made a function fn1 and make another function fn2, 
+// // then fn2 can access the data of fn1 also 
+
+// // eg.....
+
+function fn1(){
+
+    let a="shuja"
+
+    function fn2(){
+        let b="hetesh"
+        console.log("Inner call: ",a)
+    }
+    function fn3(){             // you can see , function cannot
+                     //  share data each other , they only take the data of parent function  
+       console.log(b)
+    }
+    fn2()
+    // fn3()
+}
+
+fn1()
+
+ //console.log("Outer call",a)                 // cannot access from outer s
+
+
+
+// *** 2.in closure , here we return the function which is declare in the parent fucntion 
+// but it not only return the function ,it also return the lexical scope(means it return all the parentdata also )
+// eg......
+
+function fn4(){
+    let l="shujaulllah"
+    function fn5(){
+        console.log(l)
+
+    }
+    return fn5;
+
+}
+const chai=fn4();
+chai()
+
+
+
+
+
+</script>
+<script>
+
+
+    // document.getElementById('Orange').addEventListener('click', function(){
+    //     document.body.style.backgroundColor='orange'
+    // })   
+
+ // above method is only if one or two button is used, but if 500 buttons with 500 color 
+ // then we use closure and lexical scoping 
+
+ function clickHandler(color){
+
+    return function(){
+      document.body.style.backgroundColor=`${color}`
+
+    }
+ }
+
+ document.getElementById('Orange').onclick=clickHandler("Orange")
+ document.getElementById('green').onclick=clickHandler("green") 
+
+
+
+</script>
+</html>
